@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+export PATH="/Volumes/BiocArchive/staff_users/tomharrop/bin/bowtie:${PATH}"
+
+bin/trinity/Trinity \
+	--SS_lib_type RF \
+    --max_memory 300G \
+    --CPU 10 \
+    --output output/trinity \
+    --left output/bbmerge/abdo_all_r1.fq.gz,output/bbmerge/head_all_r1.fq.gz,output/bbmerge/sting_all_r1.fq.gz \
+    --right output/bbmerge/abdo_r2_unmerged.fq.gz,output/bbmerge/head_r2_unmerged.fq.gz,output/bbmerge/sting_r2_unmerged.fq.gz \
+	--seqType fq
